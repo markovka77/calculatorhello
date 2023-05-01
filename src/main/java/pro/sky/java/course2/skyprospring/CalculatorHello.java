@@ -15,19 +15,22 @@ public class CalculatorHello {
     @GetMapping(path = "/calculator/plus")
     public String plus(@RequestParam int num1, int num2) {
         int total = num1 + num2;
-        return Integer.toString(total);
+        String sum = Integer.toString(num1)+" + "+ Integer.toString(num2)+ " = "+Integer.toString(total);
+        return sum;
     }
 
     @GetMapping(path = "/calculator/minus")
     public String minus(@RequestParam int num1, int num2) {
         int total = num1 - num2;
-        return Integer.toString(total);
+        String sum = Integer.toString(num1)+" - "+ Integer.toString(num2)+ " = "+Integer.toString(total);
+        return sum;
     }
 
     @GetMapping(path = "/calculator/multiply")
     public String multiply(@RequestParam int num1, int num2) {
-        int sum = num1 * num2;
-        return Integer.toString(sum);
+        int total = num1 * num2;
+        String sum = Integer.toString(num1)+" * "+ Integer.toString(num2)+ " = "+Integer.toString(total);
+        return sum;
     }
 
     @GetMapping(path = "/calculator/divide")
@@ -35,8 +38,9 @@ public class CalculatorHello {
         if (num1 == 0 || num2 == 0) {
             return "На ноль делить нельзя!";
         } else {
-            int sum = num1 / num2;
-            return Integer.toString(sum);
+            int total = num1 / num2;
+            String sum = Integer.toString(num1)+" + "+ Integer.toString(num2)+ " = "+Integer.toString(total);
+            return sum;
         }
     }
 
