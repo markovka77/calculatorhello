@@ -8,9 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping(path ="/calculator")
+@RequestMapping("/calculator")
+
+
 public class CalculatorHello {
-    @GetMapping(path = "/calculator")
+    @GetMapping
     public String hello() {
         return ServiceCalculator.hello();
     }
@@ -37,3 +39,4 @@ public class CalculatorHello {
         return ServiceCalculator.divide(num1, num2);
     }
 }
+
