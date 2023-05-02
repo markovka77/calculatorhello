@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Service
 abstract
-class ServiceCalculator implements ServiceIterface {
+class ServiceCalculator  {
 
     public String plus(int num1, int num2) {
         int total = num1 + num2;
