@@ -1,38 +1,44 @@
 package pro.sky.java.course2.skyprospring;
 
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 @Service
-abstract
-class ServiceCalculator  {
+abstract class ServiceCalculator  {
+    public static String hello() {
+        return "Добро пожаловать в калькулятор!";
+    }
 
-    public String plus(int num1, int num2) {
+
+    public static String plus( int num1, int num2) {
         int total = num1 + num2;
-        return Integer.toString(total);
+        String sum = Integer.toString(num1)+" + "+ Integer.toString(num2)+ " = "+Integer.toString(total);
+        return (sum);
     }
 
-    @GetMapping(path = "/calculator/minus")
-    public String minus(@RequestParam int num1, int num2) {
+
+    public static String minus( int num1, int num2) {
         int total = num1 - num2;
-        return Integer.toString(total);
+        String sum = Integer.toString(num1)+" - "+ Integer.toString(num2)+ " = "+Integer.toString(total);
+        return (sum);
     }
 
-    @GetMapping(path = "/calculator/multiply")
-    public String multiply(@RequestParam int num1, int num2) {
-        int sum = num1 * num2;
-        return Integer.toString(sum);
+
+    public static String multiply( int num1, int num2) {
+        int total = num1 * num2;
+        String sum = Integer.toString(num1)+" * "+ Integer.toString(num2)+ " = "+Integer.toString(total);
+        return (sum);
     }
 
-    @GetMapping(path = "/calculator/divide")
-    public String divide(@RequestParam int num1, int num2) {
+
+    public static String divide( int num1, int num2) {
         if (num2 == 0) {
             return "На ноль делить нельзя!";
         } else {
-            int sum = num1 / num2;
-            return Integer.toString(sum);
+            double num1d=num1;
+            double total = num1d / num2;
+            return  Integer.toString(num1)+" / "+ Integer.toString(num2)+ " = "+ String. valueOf (total);
         }
     }
 
