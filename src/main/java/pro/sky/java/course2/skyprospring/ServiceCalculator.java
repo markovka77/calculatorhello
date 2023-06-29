@@ -2,6 +2,7 @@ package pro.sky.java.course2.skyprospring;
 
 import org.springframework.stereotype.Service;
 
+import java.util.stream.IntStream;
 
 
 @Service
@@ -14,8 +15,8 @@ abstract class ServiceCalculator {
 
     public static String plus(Integer num1, Integer num2) throws Exceptions {
         checkInputOfVariables(num1,num2);
-        int total = num1 + num2;
-        String sum = Integer.toString(num1)+" + "+ Integer.toString(num2)+ " = "+Integer.toString(total);
+        String total = String.valueOf(num1 + num2);
+        String sum = num1 + " + " + num2 + " = " + total;
         return sum;
     }
 
