@@ -1,17 +1,13 @@
 package pro.sky.java.course2.skyprospring;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 class ServiceCalculatorTest {
 
     Integer num1, num2;
-
-
 
     @BeforeEach
     void setUp() {
@@ -28,28 +24,28 @@ class ServiceCalculatorTest {
 
     @Test
     void plus() throws Exceptions {
-        String total = String.valueOf(num1+num2);
+        String total = String.valueOf(num1 + num2);
         String expResult = num1 + " + " + num2 + " = " + total;
         assertEquals(expResult, ServiceCalculator.plus(num1, num2));
     }
 
     @Test
     void minus() throws Exceptions {
-        String total = String.valueOf(num1-num2);
+        String total = String.valueOf(num1 - num2);
         String expResult = num1 + " - " + num2 + " = " + total;
         assertEquals(expResult, ServiceCalculator.minus(num1, num2));
     }
 
     @Test
     void multiply() throws Exceptions {
-        String total = String.valueOf(num1*num2);
+        String total = String.valueOf(num1 * num2);
         String expResult = num1 + " * " + num2 + " = " + total;
         assertEquals(expResult, ServiceCalculator.multiply(num1, num2));
     }
 
     @Test
     void divide() throws Exceptions {
-        Double total = Double.valueOf(String.valueOf(num1 /num2));
+        Double total = Double.valueOf(String.valueOf(num1 / num2));
         String expResult = num1 + " / " + num2 + " = " + total;
         assertEquals(expResult, ServiceCalculator.divide(num1, num2));
     }
@@ -60,5 +56,12 @@ class ServiceCalculatorTest {
         assertNotNull(num2);
 
 
+    }
+    @Test
+    void checkNullParams(){
+        num2=0;
+        assertThrows(Exception.class,()->{
+            divide();
+        });
     }
 }
